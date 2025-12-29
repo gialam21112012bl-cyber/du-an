@@ -3,196 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Bản Thân & Thời Khóa Biểu</title>
+    <title>Giới Thiệu Bản Thân</title>
     <style>
-        /* CẤU HÌNH MÀU SẮC VÀ GIAO DIỆN */
-        :root {
-            --primary-color: #0ea5e9; /* Màu xanh bầu trời */
-            --accent-color: #f43f5e;  /* Màu đỏ hồng nổi bật */
-            --bg-color: #f1f5f9;
-            --text-color: #0f172a;
-        }
-
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* PHẦN GIỚI THIỆU */
-        .profile-section {
-            text-align: center;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-
-        .profile-section h1 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-            text-align: left;
-        }
-
-        .info-item {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 12px;
-            border-bottom: 3px solid var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* PHẦN THỜI KHÓA BIỂU */
-        h2 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-color);
-            margin-top: 40px;
-            font-size: 1.5rem;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 800px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 15px;
-            font-size: 0.9rem;
-        }
-
-        td {
-            padding: 15px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            background-color: #fff;
-            font-size: 0.95rem;
-        }
-
-        /* Định dạng các môn học chính */
-        .subject-tag {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .mon-chinh { background-color: #e0f2fe; color: #0369a1; } /* Toán, Lý, Hóa */
-        .mon-xa-hoi { background-color: #fef2f2; color: #b91c1c; } /* Văn, Anh */
-        .mon-khac { background-color: #f0fdf4; color: #15803d; }   /* Tin, Sinh */
-
-        .session-col {
-            font-weight: bold;
-            background-color: #f8fafc !important;
-            width: 80px;
-        }
-
-        tr:hover td {
-            background-color: #f1f5f9;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #94a3b8;
-            font-size: 0.8rem;
-        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; background-color: #f4f4f9; }
+        header { text-align: center; background: #333; color: #fff; padding: 1rem; border-radius: 8px; }
+        .content { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .links { margin-top: 20px; text-align: center; }
+        .btn { display: inline-block; padding: 10px 20px; margin: 5px; color: white; text-decoration: none; border-radius: 5px; }
+        .btn-hoc10 { background-color: #ff9800; }
+        .btn-w3 { background-color: #2196F3; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="profile-section">
-        <h1>XIN CHÀO, MÌNH LÀ [TÊN CỦA BẠN] 👋</h1>
-        <p style="color: #64748b;">Rất vui được chia sẻ thông tin cá nhân và lộ trình học tập của mình!</p>
-        
-        <div class="info-grid">
-            <div class="info-item">📍 <strong>Nơi ở:</strong> TP. Hồ Chí Minh</div>
-            <div class="info-item">🎓 <strong>Học vấn:</strong> Học sinh / Sinh viên</div>
-            <div class="info-item">🎯 <strong>Mục tiêu:</strong> Thành thạo Lập trình</div>
-            <div class="info-item">✨ <strong>Sở thích:</strong> Công nghệ & Âm nhạc</div>
-        </div>
-    </div>
+<header>
+    <h1>Chào mừng đến với trang của tôi!</h1>
+</header>
 
-    <h2>📅 THỜI KHÓA BIỂU CỐ ĐỊNH (7 MÔN HỌC)</h2>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Buổi</th>
-                    <th>Thứ 2</th>
-                    <th>Thứ 3</th>
-                    <th>Thứ 4</th>
-                    <th>Thứ 5</th>
-                    <th>Thứ 6</th>
-                    <th>Thứ 7</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="session-col">SÁNG</td>
-                    <td><span class="subject-tag mon-chinh">1. TOÁN</span></td>
-                    <td><span class="subject-tag mon-xa-hoi">2. NGỮ VĂN</span></td>
-                    <td><span class="subject-tag mon-chinh">3. VẬT LÝ</span></td>
-                    <td><span class="subject-tag mon-chinh">1. TOÁN</span></td>
-                    <td><span class="subject-tag mon-xa-hoi">2. NGỮ VĂN</span></td>
-                    <td><span class="subject-tag mon-chinh">4. HÓA HỌC</span></td>
-                </tr>
-                <tr>
-                    <td class="session-col">CHIỀU</td>
-                    <td><span class="subject-tag mon-xa-hoi">5. TIẾNG ANH</span></td>
-                    <td><span class="subject-tag mon-khac">6. TIN HỌC</span></td>
-                    <td><span class="subject-tag mon-khac">7. SINH HỌC</span></td>
-                    <td><span class="subject-tag mon-xa-hoi">5. TIẾNG ANH</span></td>
-                    <td><span class="subject-tag mon-chinh">4. HÓA HỌC</span></td>
-                    <td><span class="subject-tag mon-khac">6. TIN HỌC</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="content">
+    <h2>👋 Giới thiệu bản thân</h2>
+    <p>Xin chào! Mình là <strong>[Tran gia bao]</strong>. Hiện đang là học sinh/sinh viên đam mê công nghệ và học tập.</p>
+    <p>Mục tiêu của mình là thành thạo lập trình và hoàn thành tốt các môn học trên lớp.</p>
 
-    <div style="margin-top: 20px; padding: 15px; background: #fffbeb; border-radius: 10px; border: 1px solid #fde68a;">
-        <strong>📌 Danh sách 7 môn học chính:</strong> 
-        Toán, Ngữ Văn, Vật Lý, Hóa Học, Tiếng Anh, Tin Học, Sinh Học.
-    </div>
+    <h2>📅 Thời khóa biểu (7 Ngày - 7 Môn)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Thứ</th>
+                <th>Môn học chính</th>
+                <th>Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Thứ 2</td><td>Toán học</td><td>Ôn tập công thức</td></tr>
+            <tr><td>Thứ 3</td><td>Ngữ văn</td><td>Đọc tác phẩm mới</td></tr>
+            <tr><td>Thứ 4</td><td>Tiếng Anh</td><td>Học từ vựng trên W3Schools</td></tr>
+            <tr><td>Thứ 5</td><td>Vật lý</td><td>Làm bài tập trên Hoc10</td></tr>
+            <tr><td>Thứ 6</td><td>Hóa học</td><td>Thực hành thí nghiệm</td></tr>
+            <tr><td>Thứ 7</td><td>Tin học</td><td>Code HTML/CSS</td></tr>
+            <tr><td>Chủ nhật</td><td>Kỹ năng sống</td><td>Đọc sách & Nghỉ ngơi</td></tr>
+        </tbody>
+    </table>
 
-    <footer>
-        Được tạo bởi [Tên Của Bạn] • TP. Hồ Chí Minh, 2025
-    </footer>
+    <div class="links">
+        <h3>🔗 Liên kết học tập</h3>
+        <a href="https://hoc10.vn" target="_blank" class="btn btn-hoc10">Học10.vn</a>
+        <a href="https://www.w3schools.com" target="_blank" class="btn btn-w3">W3Schools</a>
+    </div>
 </div>
 
 </body>
