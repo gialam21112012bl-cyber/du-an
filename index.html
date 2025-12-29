@@ -3,66 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Bản Thân & Thời Khóa Biểu</title>
+    <title>Giới Thiệu Bản Thân</title>
     <style>
-        /* Thiết lập font chữ và màu nền cho toàn bộ trang */
+        /* Thiết lập chung */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
             line-height: 1.6;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
         }
 
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
 
-        /* Định dạng phần giới thiệu */
-        h1, h2 {
-            color: #2c3e50;
+        /* Phần giới thiệu */
+        .profile-header {
+            text-align: center;
+            padding-bottom: 20px;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
         }
 
-        .intro {
-            margin-bottom: 30px;
+        h1 { color: #2c3e50; margin-bottom: 5px; }
+        .subtitle { color: #3498db; font-weight: bold; font-size: 1.2em; }
+
+        /* Bảng thời khóa biểu */
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 30px;
         }
 
-        .intro p {
-            font-size: 1.1em;
-        }
-
-        /* Định dạng bảng thời khóa biểu */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 15px;
+            overflow: hidden;
+            border-radius: 8px;
         }
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
+            padding: 12px 15px;
             text-align: center;
+            border: 1px solid #ddd;
         }
 
         th {
             background-color: #3498db;
             color: white;
             text-transform: uppercase;
+            font-size: 14px;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f1f1f1; transition: 0.3s; }
 
-        tr:hover {
-            background-color: #e1f5fe;
-        }
-
+        /* Màu sắc cho môn học */
         .highlight {
+            font-weight: bold;
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-header">
+        <h1>XIN CHÀO, MÌNH LÀ [TÊN CỦA BẠN] 👋</h1>
+        <p class="subtitle">Học sinh / Sinh viên / Developer</p>
+        <p>Yêu thích lập trình, đọc sách và khám phá công nghệ mới. Rất vui được làm quen với mọi người!</p>
+    </div>
+
+    <h2>Thông tin cơ bản</h2>
+    <ul>
+        <li><strong>Ngày sinh:</strong> 01/01/200x</li>
+        <li><strong>Ngôn ngữ:</strong> HTML, CSS, JavaScript</li>
+        <li><strong>Sở thích:</strong> Chơi game, đá bóng, học code</li>
+    </ul>
+
+    <h2>Thời Khóa Biểu</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiết</th>
+                <th>Thứ 2</th>
+                <th>Thứ 3</th>
+                <th>Thứ 4</th>
+                <th>Thứ 5</th>
+                <th>Thứ 6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sáng</td>
+                <td class="highlight">Toán</td>
+                <td>Văn</td>
+                <td class="highlight">Anh Văn</td>
+                <td>Lý</td>
+                <td>Hóa</td>
+            </tr>
+            <tr>
+                <td>Chiều</td>
+                <td>Tin học</td>
+                <td class="highlight">Lập trình</td>
+                <td>Thể dục</td>
+                <td>Sinh học</td>
+                <td>Tự học</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
