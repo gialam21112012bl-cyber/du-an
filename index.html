@@ -3,107 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới thiệu bản thân</title>
+    <title>Thời Khóa Biểu Của Tôi</title>
     <style>
-        /* CSS để trang trí */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
         }
-        header {
-            background: #2c3e50;
-            color: #ffffff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 2rem 0;
-        }
-        .profile-card {
-            background: #fff;
-            padding: 2rem;
+        table {
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
             text-align: center;
         }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #3498db;
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+            transition: 0.3s;
+        }
+        .tiet {
+            font-weight: bold;
+            background-color: #e8f5e9;
+            width: 80px;
         }
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        .skills ul {
-            list-style: none;
-            padding: 0;
-        }
-        .skills li {
-            display: inline-block;
-            background: #3498db;
-            color: #fff;
-            padding: 5px 15px;
-            margin: 5px;
-            border-radius: 20px;
-        }
-        footer {
             text-align: center;
-            padding: 2rem;
-            background: #2c3e50;
-            color: white;
-            margin-top: 2rem;
+            color: #2c3e50;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Chào mừng đến với Website của mình!</h1>
-    </header>
-
-    <div class="container">
-        <section class="profile-card">
-            <img src="https://via.placeholder.com/150" alt="Ảnh chân dung" class="profile-img">
-            <h1>Tran gia bao</h1>
-            <p><strong>Nghề nghiệp:</strong> Web Developer / Sinh viên</p>
-            <p>Chào bạn! Mình là một người đam mê công nghệ và thích sáng tạo ra những thứ mới mẻ trên internet.</p>
-        </section>
-
-        <section>
-            <h2>Kỹ năng</h2>
-            <div class="skills">
-                <ul>
-                    <li>HTML5 & CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Thiết kế UI/UX</li>
-                    <li>Thuyết trình</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Liên hệ</h2>
-            <p>📧 Email: emailcuaban@gmail.com</p>
-            <p>📞 Số điện thoại: 0123 456 789</p>
-            <p>🌐 Facebook: fb.com/username</p>
-        </section>
+    <div style="width: 100%;">
+        <h2>THỜI KHÓA BIỂU HÀNG TUẦN</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tiết</th>
+                    <th>Thứ 2</th>
+                    <th>Thứ 3</th>
+                    <th>Thứ 4</th>
+                    <th>Thứ 5</th>
+                    <th>Thứ 6</th>
+                    <th>Thứ 7</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tiet">Tiết 1</td>
+                    <td>Toán</td>
+                    <td>Văn</td>
+                    <td>Anh Văn</td>
+                    <td>Lý</td>
+                    <td>Hóa</td>
+                    <td>Sinh học</td>
+                </tr>
+                <tr>
+                    <td class="tiet">Tiết 2</td>
+                    <td>Toán</td>
+                    <td>Văn</td>
+                    <td>Anh Văn</td>
+                    <td>Lý</td>
+                    <td>Hóa</td>
+                    <td>Địa lý</td>
+                </tr>
+                <tr>
+                    <td class="tiet">Tiết 3</td>
+                    <td>Tin học</td>
+                    <td>Lịch sử</td>
+                    <td>Thể dục</td>
+                    <td>Toán</td>
+                    <td>Văn</td>
+                    <td>Công nghệ</td>
+                </tr>
+                <tr>
+                    <td class="tiet">Tiết 4</td>
+                    <td>Tin học</td>
+                    <td>Lịch sử</td>
+                    <td>Thể dục</td>
+                    <td>Toán</td>
+                    <td>Văn</td>
+                    <td>GDCD</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="background: #eee; font-style: italic;">Nghỉ giải lao</td>
+                </tr>
+                <tr>
+                    <td class="tiet">Tiết 5</td>
+                    <td>Anh Văn</td>
+                    <td>Toán</td>
+                    <td>Sinh học</td>
+                    <td>Văn</td>
+                    <td>Lý</td>
+                    <td>Sinh hoạt</td>
+                </tr>
+                <tr>
+                    <td class="tiet">Tiết 6</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td class="tiet">Tiết 7</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Bản quyền thuộc về Nguyễn Văn A</p>
-    </footer>
 
 </body>
 </html>
