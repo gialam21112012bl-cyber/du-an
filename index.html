@@ -3,58 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Bản Thân</title>
+    <title>Giới thiệu bản thân</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; background-color: #f4f4f9; }
-        header { text-align: center; background: #333; color: #fff; padding: 1rem; border-radius: 8px; }
-        .content { background: white; padding: 20px; border-radius: 8px; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
-        th { background-color: #4CAF50; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        .links { margin-top: 20px; text-align: center; }
-        .btn { display: inline-block; padding: 10px 20px; margin: 5px; color: white; text-decoration: none; border-radius: 5px; }
-        .btn-hoc10 { background-color: #ff9800; }
-        .btn-w3 { background-color: #2196F3; }
+        /* CSS để trang trí */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        .profile-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills li {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #2c3e50;
+            color: white;
+            margin-top: 2rem;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Chào mừng đến với trang của tôi!</h1>
-</header>
+    <header>
+        <h1>Chào mừng đến với Website của mình!</h1>
+    </header>
 
-<div class="content">
-    <h2>👋 Giới thiệu bản thân</h2>
-    <p>Xin chào! Mình là <strong>[Tran gia bao]</strong>. Hiện đang là học sinh/sinh viên đam mê công nghệ và học tập.</p>
-    <p>Mục tiêu của mình là thành thạo lập trình và hoàn thành tốt các môn học trên lớp.</p>
+    <div class="container">
+        <section class="profile-card">
+            <img src="https://via.placeholder.com/150" alt="Ảnh chân dung" class="profile-img">
+            <h1>Tran gia bao</h1>
+            <p><strong>Nghề nghiệp:</strong> Web Developer / Sinh viên</p>
+            <p>Chào bạn! Mình là một người đam mê công nghệ và thích sáng tạo ra những thứ mới mẻ trên internet.</p>
+        </section>
 
-    <h2>📅 Thời khóa biểu (7 Ngày - 7 Môn)</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Thứ</th>
-                <th>Môn học chính</th>
-                <th>Ghi chú</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Thứ 2</td><td>Toán học</td><td>Ôn tập công thức</td></tr>
-            <tr><td>Thứ 3</td><td>Ngữ văn</td><td>Đọc tác phẩm mới</td></tr>
-            <tr><td>Thứ 4</td><td>Tiếng Anh</td><td>Học từ vựng trên W3Schools</td></tr>
-            <tr><td>Thứ 5</td><td>Vật lý</td><td>Làm bài tập trên Hoc10</td></tr>
-            <tr><td>Thứ 6</td><td>Hóa học</td><td>Thực hành thí nghiệm</td></tr>
-            <tr><td>Thứ 7</td><td>Tin học</td><td>Code HTML/CSS</td></tr>
-            <tr><td>Chủ nhật</td><td>Kỹ năng sống</td><td>Đọc sách & Nghỉ ngơi</td></tr>
-        </tbody>
-    </table>
+        <section>
+            <h2>Kỹ năng</h2>
+            <div class="skills">
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Thiết kế UI/UX</li>
+                    <li>Thuyết trình</li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="links">
-        <h3>🔗 Liên kết học tập</h3>
-        <a href="https://hoc10.vn" target="_blank" class="btn btn-hoc10">Học10.vn</a>
-        <a href="https://www.w3schools.com" target="_blank" class="btn btn-w3">W3Schools</a>
+        <section>
+            <h2>Liên hệ</h2>
+            <p>📧 Email: emailcuaban@gmail.com</p>
+            <p>📞 Số điện thoại: 0123 456 789</p>
+            <p>🌐 Facebook: fb.com/username</p>
+        </section>
     </div>
-</div>
+
+    <footer>
+        <p>&copy; 2024 Bản quyền thuộc về Nguyễn Văn A</p>
+    </footer>
 
 </body>
 </html>
