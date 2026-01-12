@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thời Khóa Biểu Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f5e9;
+        }
+
+        .tiet-header {
+            font-weight: bold;
+            background-color: #eee;
+            width: 80px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>📅 THỜI KHÓA BIỂU CỦA TÔI</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiết</th>
+                <th>Thứ 2</th>
+                <th>Thứ 3</th>
+                <th>Thứ 4</th>
+                <th>Thứ 5</th>
+                <th>Thứ 6</th>
+                <th>Thứ 7</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tiet-header">Tiết 1</td>
+                <td>Toán</td>
+                <td>Văn</td>
+                <td>Anh văn</td>
+                <td>Lý</td>
+                <td>Hóa</td>
+                <td>Sinh</td>
+            </tr>
+            <tr>
+                <td class="tiet-header">Tiết 2</td>
+                <td>Toán</td>
+                <td>Văn</td>
+                <td>Anh văn</td>
+                <td>Lý</td>
+                <td>Hóa</td>
+                <td>Sử</td>
+            </tr>
+            <tr>
+                <td class="tiet-header">Tiết 3</td>
+                <td>Chào cờ</td>
+                <td>Sử</td>
+                <td>Địa lý</td>
+                <td>Thể dục</td>
+                <td>Tin học</td>
+                <td>GDCD</td>
+            </tr>
+            <tr>
+                <td class="tiet-header">Tiết 4</td>
+                <td>Văn</td>
+                <td>Toán</td>
+                <td>Sinh học</td>
+                <td>Thể dục</td>
+                <td>Tin học</td>
+                <td>Công nghệ</td>
+            </tr>
+            <tr>
+                <td class="tiet-header">Tiết 5</td>
+                <td>Văn</td>
+                <td>Địa lý</td>
+                <td>Hóa học</td>
+                <td>Toán</td>
+                <td>Anh văn</td>
+                <td>Sinh</td>
+            </tr>
+            <tr>
+                <td class="tiet-header">Tiết 6</td>
+                <td>Ngoại ngữ</td>
+                <td>Lý</td>
+                <td>Toán</td>
+                <td>Văn</td>
+                <td>Địa lý</td>
+                <td>SHCN</td>
+            </tr>
+            <tr>
+                <td class="tiet-header">Tiết 7</td>
+                <td>Kỹ năng sống</td>
+                <td>Lý</td>
+                <td>Toán</td>
+                <td>Văn</td>
+                <td>Địa lý</td>
+                <td>Tự chọn</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
