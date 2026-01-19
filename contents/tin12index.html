@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình Tin học 12 - Slide</title>
+    <style>
+        /* Tổng thể giao diện tối giống Google Meet */
+        body {
+            background-color: #202124;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Khung trắng giả lập Slide bài giảng */
+        .slide {
+            background-color: white;
+            width: 85%;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9; /* Tỉ lệ màn hình slide */
+            padding: 50px 80px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            overflow-y: auto;
+        }
+
+        /* Tiêu đề chính màu đỏ đậm */
+        h1 {
+            color: #C00000;
+            text-align: center;
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Các tiêu đề mục A, B, C, D, E màu đỏ cam */
+        .muc-lon {
+            color: #E26B5D;
+            font-weight: bold;
+            font-size: 19px;
+            margin-top: 25px;
+            text-transform: uppercase;
+        }
+
+        /* Danh sách các nội dung con */
+        ul {
+            list-style-type: disc; /* Dấu chấm tròn */
+            margin-left: 45px;
+            margin-top: 8px;
+            color: #333;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        /* Xử lý mục C trống */
+        .muc-trong {
+            margin-bottom: 20px;
+        }
+
+        /* Tùy chỉnh thanh cuộn cho giống slide */
+        .slide::-webkit-scrollbar {
+            width: 8px;
+        }
+        .slide::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide">
+        <h1>CHƯƠNG TRÌNH TIN HỌC 12</h1>
+
+        <div class="muc-lon">A. GIỚI THIỆU TRÍ TUỆ NHÂN TẠO, HỌC MÁY, KHOA HỌC DỮ LIỆU</div>
+        <ul>
+            <li>Giới thiệu về trí tuệ nhân tạo</li>
+            <li>Sử dụng AI trong học tập và đời sống</li>
+            <li>Giới thiệu về Học máy và Khoa học dữ liệu</li>
+            <li>Thực hành phân tích dữ liệu</li>
+        </ul>
+
+        <div class="muc-lon">B. KẾT NỐI MẠNG</div>
+        <ul>
+            <li>Cơ sở về mạng máy tính</li>
+            <li>Giao thức mạng</li>
+            <li>Đường truyền dữ liệu</li>
+            <li>Thiết bị mạng</li>
+            <li>Thiết kế mạng LAN</li>
+        </ul>
+
+        <div class="muc-lon muc-trong">C.</div>
+
+        <div class="muc-lon">D. ĐẠO ĐỨC, PHÁP LUẬT VÀ VĂN HÓA TRONG MÔI TRƯỜNG SỐ</div>
+
+        <div class="muc-lon">E. TẠO TRANG WEB</div>
+    </div>
+
+</body>
+</html>
