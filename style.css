@@ -1,0 +1,60 @@
+/* 1. Định dạng nền tối bên ngoài (giống Google Meet) */
+body {
+    background-color: #202124; /* Màu xám đen đặc trưng của Meet */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* 2. Khung trắng của Slide */
+.slide-container {
+    background-color: white;
+    width: 90%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9; /* Tỉ lệ khung hình slide */
+    padding: 40px 60px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 3. Tiêu đề chính (Màu đỏ đậm) */
+h1 {
+    color: #B22222; /* Crimson Red */
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 4. Các mục lớn A, B, C, D... (Màu đỏ cam) */
+.category {
+    color: #E67E73; /* Màu đỏ cam nhạt */
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* 5. Danh sách các mục con */
+ul {
+    list-style-type: disc; /* Dấu chấm tròn */
+    margin-left: 50px;
+    margin-top: 5px;
+    color: #3c4043;
+}
+
+li {
+    font-size: 15px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+/* 6. Xử lý các mục trống (như mục C) */
+.empty-margin {
+    margin-bottom: 20px;
+}
