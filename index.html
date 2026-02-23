@@ -1,54 +1,79 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Web Tổng Hợp - THPT Ngô Quyền</title>
     <style>
-        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; padding: 20px 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; flex-direction: column; align-items: center; padding: 20px 0; }
         
-        .wrapper { width: 1000px; background-color: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.2); border: 1px solid #ddd; }
+        .wrapper { width: 1000px; background-color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; }
         
-        header img { width: 100%; display: block; }
+        /* Header thiết kế theo mẫu trong ảnh */
+        header { 
+            background: linear-gradient(135deg, #004aad 0%, #00a3ff 100%); 
+            color: white; 
+            padding: 30px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            position: relative;
+            border-bottom: 3px solid #003366;
+            min-height: 180px;
+        }
+        .header-content { text-align: center; }
+        .header-content h1 { font-size: 32px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .header-content p { font-style: italic; font-size: 18px; opacity: 0.9; }
         
-        nav { background-color: #2c3e50; }
+        /* Menu bar */
+        nav { background-color: #23395d; border-bottom: 1px solid #1a2a44; }
         nav ul { list-style: none; display: flex; }
-        nav ul li a { display: block; color: white; text-decoration: none; padding: 12px 25px; font-size: 14px; cursor: pointer; }
-        nav ul li a:hover { background-color: #34495e; text-decoration: underline; }
+        nav ul li a { display: block; color: white; text-decoration: none; padding: 12px 25px; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.3s; }
+        nav ul li a:hover { background-color: #34495e; color: #ffcc00; }
 
         .contents { padding: 40px; min-height: 500px; }
-        footer { background-color: #2c3e50; color: white; text-align: center; padding: 15px 0; font-size: 13px; }
-
-      
-        .section { display: none; animation: fadeIn 0.5s; } /* Ẩn tất cả các phần mặc định */
-        .active { display: block; } /* Chỉ hiện phần có class active */
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        h2 { color: #cc0000; text-align: center; text-transform: uppercase; margin-bottom: 30px; }
-
-      
-        .profile-layout { display: flex; gap: 30px; }
-        .avatar img { width: 180px; border: 1px solid #ccc; padding: 2px; }
-        .info h3 { color: #cc0000; margin-top: 15px; }
-
         
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #bdc3c7; padding: 12px; text-align: center; }
-        th { background-color: #3498db; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
+        footer { background-color: #23395d; color: #bdc3c7; text-align: center; padding: 15px 0; font-size: 13px; border-top: 1px solid #1a2a44; }
 
-       
-        .lesson-item { border-left: 5px solid #2ecc71; background: #f9f9f9; margin-bottom: 10px; padding: 15px; }
+        /* Logic chuyển trang */
+        .section { display: none; } 
+        .active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        h2 { color: #d32f2f; text-align: center; text-transform: uppercase; margin-bottom: 30px; font-weight: 700; border-bottom: 2px solid #eeeeee; padding-bottom: 10px; }
+
+        /* Profile Layout */
+        .profile-layout { display: flex; gap: 40px; align-items: flex-start; }
+        .avatar { flex-shrink: 0; }
+        .avatar img { 
+            width: 200px; 
+            height: 250px; 
+            object-fit: cover; 
+            border: 4px solid #fff; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+            border-radius: 4px;
+        }
+        .info { line-height: 1.8; color: #333; }
+        .info p { margin-bottom: 10px; }
+        .info h3 { color: #d32f2f; margin-top: 20px; font-size: 1.1rem; border-left: 4px solid #d32f2f; padding-left: 10px; }
+
+        /* Table & List Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #dee2e6; padding: 15px; text-align: center; }
+        th { background-color: #004aad; color: white; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        .lesson-item { border-left: 5px solid #28a745; background: #fdfdfd; margin-bottom: 15px; padding: 15px; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); }
     </style>
 </head>
 <body>
 
     <div class="wrapper">
         <header>
-            <img src="https://via.placeholder.com/1000x250/0056b3/ffffff?text=TRUONG+THPT+NGO+QUYEN+TPHCM+-+Tin+hoc+12" alt="Banner">
+            <div class="header-content">
+                <h1>TRƯỜNG THPT NGÔ QUYỀN TPHCM</h1>
+                <p>Chuyên trang Tin học 12</p>
+            </div>
         </header>
 
         <nav>
@@ -63,14 +88,23 @@
         <main class="contents">
             
             <div id="gioithieu" class="section active">
-                <h2>Giới thiệu bản thân</h2>
+                <h2>GIỚI THIỆU BẢN THÂN</h2>
                 <div class="profile-layout">
-                    <div class="avatar"><img src="https://via.placeholder.com/180x240" alt="Avatar"></div>
+                    <div class="avatar">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg" alt="Lionel Messi">
+                    </div>
                     <div class="info">
-                        <p><strong>Nickname:</strong> Yor</p>
-                        <p><strong>Tuổi:</strong> 17 - đủ lớn để hiểu chuyện, đủ trẻ để mơ lớn.</p>
-                        <h3>Tính cách</h3><p>nửa nghệ sĩ, nửa "chiến binh"</p>
-                        <h3>Sở thích</h3><p>Nghe nhạc, đọc thơ, sưu tầm quotes...</p>
+                        <p><strong>Nickname:</strong> Bao Tran</p>
+                        <p><strong>Tuổi:</strong> 17 - "Dù ở tuổi nào, đam mê vẫn là kim chỉ nam."</p>
+                        
+                        <h3>Tính cách</h3>
+                        <p>Nửa đùa giỡn , nửa "chiến binh" trong mọi thử thách.</p>
+                        
+                        <h3>Sở thích</h3>
+                        <p>Chinh phục những đỉnh cao mới.</p>
+                        
+                        <h3>Sở trường</h3>
+                        <p>Chơi game, viết văn,...</p>
                     </div>
                 </div>
             </div>
@@ -94,25 +128,22 @@
 
             <div id="data" class="section">
                 <h2>Dữ liệu phân tích</h2>
-                <p style="text-align: center;">Nội dung đang được cập nhật...</p>
+                <p style="text-align: center; color: #666; font-style: italic;">Nội dung đang được cập nhật...</p>
             </div>
 
         </main>
 
         <footer>
-            &copy; 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM
+            &copy; 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Lớp 12A9
         </footer>
     </div>
 
     <script>
         function showSection(sectionId) {
-            
             var sections = document.getElementsByClassName('section');
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active');
             }
-
-             
             document.getElementById(sectionId).classList.add('active');
         }
     </script>
