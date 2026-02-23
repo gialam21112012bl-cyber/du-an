@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Tổng Hợp - THPT Ngô Quyền</title>
+    <style>
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; flex-direction: column; align-items: center; padding: 20px 0; }
+        
+        .wrapper { width: 1000px; background-color: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.2); border: 1px solid #ddd; }
+        
+        header img { width: 100%; display: block; }
+        
+        nav { background-color: #2c3e50; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li a { display: block; color: white; text-decoration: none; padding: 12px 25px; font-size: 14px; cursor: pointer; }
+        nav ul li a:hover { background-color: #34495e; text-decoration: underline; }
+
+        .contents { padding: 40px; min-height: 500px; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 15px 0; font-size: 13px; }
+
+      
+        .section { display: none; animation: fadeIn 0.5s; } /* Ẩn tất cả các phần mặc định */
+        .active { display: block; } /* Chỉ hiện phần có class active */
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { color: #cc0000; text-align: center; text-transform: uppercase; margin-bottom: 30px; }
+
+      
+        .profile-layout { display: flex; gap: 30px; }
+        .avatar img { width: 180px; border: 1px solid #ccc; padding: 2px; }
+        .info h3 { color: #cc0000; margin-top: 15px; }
+
+        
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #bdc3c7; padding: 12px; text-align: center; }
+        th { background-color: #3498db; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+
+       
+        .lesson-item { border-left: 5px solid #2ecc71; background: #f9f9f9; margin-bottom: 10px; padding: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <img src="https://via.placeholder.com/1000x250/0056b3/ffffff?text=TRUONG+THPT+NGO+QUYEN+TPHCM+-+Tin+hoc+12" alt="Banner">
+        </header>
+
+        <nav>
+            <ul>
+                <li><a onclick="showSection('gioithieu')">Giới thiệu</a></li>
+                <li><a onclick="showSection('tkb')">Thời khóa biểu</a></li>
+                <li><a onclick="showSection('tinhoc')">Chương trình Tin 12</a></li>
+                <li><a onclick="showSection('data')">Data Analyst</a></li>
+            </ul>
+        </nav>
+
+        <main class="contents">
+            
+            <div id="gioithieu" class="section active">
+                <h2>Giới thiệu bản thân</h2>
+                <div class="profile-layout">
+                    <div class="avatar"><img src="https://via.placeholder.com/180x240" alt="Avatar"></div>
+                    <div class="info">
+                        <p><strong>Nickname:</strong> Yor</p>
+                        <p><strong>Tuổi:</strong> 17 - đủ lớn để hiểu chuyện, đủ trẻ để mơ lớn.</p>
+                        <h3>Tính cách</h3><p>nửa nghệ sĩ, nửa "chiến binh"</p>
+                        <h3>Sở thích</h3><p>Nghe nhạc, đọc thơ, sưu tầm quotes...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tkb" class="section">
+                <h2>Thời khóa biểu lớp 12A9</h2>
+                <table>
+                    <tr><th>Tiết</th><th>Thứ 2</th><th>Thứ 3</th><th>Thứ 4</th><th>Thứ 5</th><th>Thứ 6</th></tr>
+                    <tr><td>1</td><td>Chào cờ</td><td>Toán</td><td>Văn</td><td>Anh</td><td>Tin học</td></tr>
+                    <tr><td>2</td><td>Toán</td><td>Toán</td><td>Văn</td><td>Anh</td><td>Tin học</td></tr>
+                    <tr><td>3</td><td>Lý</td><td>Lý</td><td>Sử</td><td>Địa</td><td>GDCD</td></tr>
+                </table>
+            </div>
+
+            <div id="tinhoc" class="section">
+                <h2>Chương trình Tin học 12</h2>
+                <div class="lesson-item"><h3>Chương 1</h3><p>Khái niệm hệ cơ sở dữ liệu.</p></div>
+                <div class="lesson-item"><h3>Chương 2</h3><p>Hệ quản trị CSDL Microsoft Access.</p></div>
+                <div class="lesson-item"><h3>Chương 3</h3><p>Cấu trúc và liên kết bảng.</p></div>
+            </div>
+
+            <div id="data" class="section">
+                <h2>Dữ liệu phân tích</h2>
+                <p style="text-align: center;">Nội dung đang được cập nhật...</p>
+            </div>
+
+        </main>
+
+        <footer>
+            &copy; 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+
+             
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
