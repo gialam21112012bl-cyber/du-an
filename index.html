@@ -20,11 +20,11 @@
             width: 1000px; 
             background-color: #fff; 
             box-shadow: 0 4px 25px rgba(0,0,0,0.2); 
-            border-radius: 8px; 
+            border-radius: 12px; 
             overflow: hidden; 
         }
         
-        /* Header có Logo */
+        /* Header với Logo mới */
         header { 
             background: linear-gradient(135deg, #004aad 0%, #00a3ff 100%); 
             color: white; 
@@ -32,34 +32,37 @@
             display: flex; 
             align-items: center; 
             justify-content: center;
-            border-bottom: 4px solid #003366;
-            gap: 30px; /* Khoảng cách giữa logo và chữ */
+            border-bottom: 5px solid #003366;
+            gap: 25px; 
         }
 
         .logo-truong {
-            width: 120px;
+            width: 110px; /* Điều chỉnh kích thước logo phù hợp */
             height: auto;
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
-            transition: transform 0.3s ease;
+            border-radius: 50%; /* Làm tròn nếu logo hình tròn */
+            background: white; /* Tạo nền trắng nhẹ cho logo nổi bật */
+            padding: 5px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .logo-truong:hover {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(10deg);
         }
 
         .header-content { text-align: left; }
         .header-content h1 { 
-            font-size: 30px; 
+            font-size: 28px; 
             font-weight: 800; 
             text-transform: uppercase; 
             letter-spacing: 1px; 
             margin-bottom: 5px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .header-content p { font-style: italic; font-size: 18px; opacity: 0.9; }
+        .header-content p { font-style: italic; font-size: 17px; opacity: 0.9; }
         
         /* Menu Điều Hướng */
-        nav { background-color: #23395d; border-bottom: 1px solid #1a2a44; sticky: top; }
+        nav { background-color: #23395d; position: sticky; top: 0; z-index: 1000; }
         nav ul { list-style: none; display: flex; justify-content: center; }
         nav ul li a { 
             display: block; 
@@ -77,8 +80,8 @@
         .contents { padding: 40px; min-height: 500px; }
         
         .section { display: none; } 
-        .active { display: block; animation: fadeIn 0.5s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .active { display: block; animation: fadeIn 0.6s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         h2 { 
             color: #d32f2f; 
@@ -96,45 +99,45 @@
             width: 220px; 
             height: 280px; 
             object-fit: cover; 
-            border: 5px solid #fff; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-            border-radius: 8px;
+            border: 6px solid #fff; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15); 
+            border-radius: 10px;
         }
         .info { line-height: 1.8; color: #333; flex: 1; }
-        .info p { margin-bottom: 10px; font-size: 16px; }
+        .info p { margin-bottom: 12px; font-size: 16px; }
         .info h3 { 
-            color: #d32f2f; 
+            color: #004aad; 
             margin-top: 20px; 
-            font-size: 1.1rem; 
-            border-left: 5px solid #d32f2f; 
-            padding-left: 10px; 
-            margin-bottom: 10px;
+            font-size: 1.15rem; 
+            border-left: 5px solid #004aad; 
+            padding-left: 12px; 
+            margin-bottom: 12px;
         }
 
         /* Bảng thời khóa biểu */
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 8px; overflow: hidden; }
         th, td { border: 1px solid #dee2e6; padding: 15px; text-align: center; }
-        th { background-color: #004aad; color: white; font-size: 16px; }
+        th { background-color: #004aad; color: white; font-size: 16px; text-transform: uppercase; }
         tr:nth-child(even) { background-color: #f8f9fa; }
-        tr:hover { background-color: #fff9c4; }
+        tr:hover { background-color: #fff9c4; transition: 0.2s; }
 
         /* Bài học Tin học */
         .lesson-item { 
-            border-left: 5px solid #28a745; 
+            border-left: 6px solid #28a745; 
             background: #fdfdfd; 
             margin-bottom: 15px; 
             padding: 20px; 
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
-            border-radius: 0 4px 4px 0;
+            box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
+            border-radius: 0 8px 8px 0;
         }
-        .lesson-item h3 { color: #28a745; margin-bottom: 5px; }
+        .lesson-item h3 { color: #28a745; margin-bottom: 8px; }
 
         /* Footer */
         footer { 
             background-color: #23395d; 
             color: #bdc3c7; 
             text-align: center; 
-            padding: 20px 0; 
+            padding: 25px 0; 
             font-size: 14px; 
             border-top: 1px solid #1a2a44; 
         }
@@ -143,8 +146,9 @@
         @media (max-width: 1000px) {
             .wrapper { width: 95%; }
             .profile-layout { flex-direction: column; align-items: center; text-align: center; }
-            header { flex-direction: column; text-align: center; }
             .header-content { text-align: center; }
+            header { flex-direction: column; }
+            .info h3 { border-left: none; border-bottom: 2px solid #004aad; display: inline-block; padding: 0 10px; }
         }
     </style>
 </head>
@@ -152,7 +156,7 @@
 
     <div class="wrapper">
         <header>
-            <img src="https://ngoquyen.hcm.edu.vn/Uploads/ngoquyen/2021_3/Logo-Ngo-Quyen_233202111.png" alt="Logo Ngô Quyền" class="logo-truong">
+            <img src="https://filethpt.hcm.edu.vn/UploadImages/thptngoquyen/anh_dai_dien/LogoNQ.jpg?w=1130" alt="Logo Ngô Quyền" class="logo-truong">
             <div class="header-content">
                 <h1>TRƯỜNG THPT NGÔ QUYỀN TPHCM</h1>
                 <p>Chuyên trang Tin học 12 - Sáng tạo & Đam mê</p>
@@ -232,34 +236,42 @@
             <div id="data" class="section">
                 <h2>Nghề giáo viên văn</h2>
                 <div style="text-align: center; padding: 20px;">
-                    <p style="color: #666; font-style: italic; font-size: 20px; margin-bottom: 20px;">"Gieo mầm con chữ - Nuôi dưỡng tâm hồn"</p>
-                    <p style="line-height: 1.6;">Lựa chọn trở thành Giáo viên Ngữ văn không chỉ là dạy kiến thức, mà còn là truyền ngọn lửa yêu thương và cái nhìn nhân văn về cuộc đời qua từng tác phẩm văn học.</p>
+                    <p style="color: #666; font-style: italic; font-size: 22px; margin-bottom: 20px;">"Gieo mầm con chữ - Nuôi dưỡng tâm hồn"</p>
+                    <p style="line-height: 1.8; max-width: 80%; margin: 0 auto; color: #444;">
+                        Lựa chọn trở thành Giáo viên Ngữ văn không chỉ là dạy kiến thức, mà còn là truyền ngọn lửa yêu thương và cái nhìn nhân văn về cuộc đời qua từng tác phẩm văn học. 
+                        Đó là hành trình đánh thức những xúc cảm tốt đẹp nhất trong lòng học sinh.
+                    </p>
                 </div>
             </div>
 
         </main>
 
         <footer>
-            &copy; 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Lớp 12A9 <br>
-            <small>Bài tập thực hành Tin học 12</small>
+            &copy; 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Bảo Trân 12A9 <br>
+            <small>Bài tập thực hành Tin học 12 - Chúc bạn đạt điểm tối đa!</small>
         </footer>
     </div>
 
     <script>
         function showSection(sectionId) {
-            // Lấy tất cả các section
             var sections = document.getElementsByClassName('section');
-            
-            // Ẩn tất cả các section đi
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active');
             }
-            
-            // Hiện section được chọn
             document.getElementById(sectionId).classList.add('active');
             
-            // Cuộn lên đầu trang nội dung để dễ nhìn
-            window.scrollTo({ top: 150, behavior: 'smooth' });
+            // Cuộn mượt mà đến vùng nội dung
+            const offset = 120;
+            const element = document.getElementById(sectionId);
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
         }
     </script>
 
