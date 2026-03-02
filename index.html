@@ -37,10 +37,10 @@
         }
 
         .logo-truong {
-            width: 110px; /* Điều chỉnh kích thước logo phù hợp */
+            width: 110px; 
             height: auto;
-            border-radius: 50%; /* Làm tròn nếu logo hình tròn */
-            background: white; /* Tạo nền trắng nhẹ cho logo nổi bật */
+            border-radius: 50%; 
+            background: white; 
             padding: 5px;
             box-shadow: 0 0 15px rgba(255,255,255,0.3);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -131,6 +131,25 @@
             border-radius: 0 8px 8px 0;
         }
         .lesson-item h3 { color: #28a745; margin-bottom: 8px; }
+
+        /* Nút xem video */
+        .video-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255,0,0,0.3);
+        }
+        .video-btn:hover {
+            background-color: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,0,0,0.4);
+        }
 
         /* Footer */
         footer { 
@@ -241,6 +260,9 @@
                         Lựa chọn trở thành Giáo viên Ngữ văn không chỉ là dạy kiến thức, mà còn là truyền ngọn lửa yêu thương và cái nhìn nhân văn về cuộc đời qua từng tác phẩm văn học. 
                         Đó là hành trình đánh thức những xúc cảm tốt đẹp nhất trong lòng học sinh.
                     </p>
+                    <a href="https://www.youtube.com/watch?v=1Z1IvK7FgY8&pp=ygUdZ2lvaSB0aGlldSBuZ2hlIGdpYW8gdmllbiB2YW4%3D" target="_blank" class="video-btn">
+                        ▶ Xem Video Giới Thiệu Nghề
+                    </a>
                 </div>
             </div>
 
@@ -263,15 +285,17 @@
             // Cuộn mượt mà đến vùng nội dung
             const offset = 120;
             const element = document.getElementById(sectionId);
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = element.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
+            if(element) {
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = element.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
     </script>
 
