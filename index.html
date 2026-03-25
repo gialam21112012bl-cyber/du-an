@@ -151,6 +151,40 @@
             box-shadow: 0 6px 20px rgba(255,0,0,0.4);
         }
 
+        /* --- CSS CHO PHẦN FORM Ý KIẾN --- */
+        .form-container { 
+            border: 1px solid #ccc; 
+            padding: 25px; 
+            max-width: 650px; 
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .thank-you-message { 
+            display: none; 
+            border: 2px solid #4CAF50; 
+            padding: 20px; 
+            background-color: #f1f8e9; 
+            margin-bottom: 20px; 
+            text-align: center;
+            border-radius: 8px;
+        }
+        .section-title { font-weight: bold; margin-top: 20px; display: block; color: #004aad; border-bottom: 1px solid #eee; margin-bottom: 10px; }
+        textarea { margin-top: 5px; width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        .submit-btn { 
+            margin-top: 20px; 
+            padding: 12px 30px; 
+            cursor: pointer; 
+            background-color: #004aad; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .submit-btn:hover { background-color: #003366; }
+
         /* Footer */
         footer { 
             background-color: #23395d; 
@@ -188,6 +222,7 @@
                 <li><a onclick="showSection('tkb')">Thời khóa biểu</a></li>
                 <li><a onclick="showSection('tinhoc')">Chương trình Tin 12</a></li>
                 <li><a onclick="showSection('data')">Nghề tương lai</a></li>
+                <li><a onclick="showSection('feedback')">Đóng góp ý kiến</a></li>
             </ul>
         </nav>
 
@@ -260,21 +295,59 @@
                         Lựa chọn trở thành Giáo viên Ngữ văn không chỉ là dạy kiến thức, mà còn là truyền ngọn lửa yêu thương và cái nhìn nhân văn về cuộc đời qua từng tác phẩm văn học. 
                         Đó là hành trình đánh thức những xúc cảm tốt đẹp nhất trong lòng học sinh.
                     </p>
-                    <a href="https://www.youtube.com/watch?v=1Z1IvK7FgY8&pp=ygUdZ2lvaSB0aGlldSBuZ2hlIGdpYW8gdmllbiB2YW4%3D" target="_blank" class="video-btn">
+                    <a href="https://www.youtube.com" target="_blank" class="video-btn">
                         ▶ Xem Video Giới Thiệu Nghề
                     </a>
+                </div>
+            </div>
+
+            <div id="feedback" class="section">
+                <h2>ĐÓNG GÓP Ý KIẾN THƯ VIỆN</h2>
+                
+                <div id="feedbackResponse" class="thank-you-message">
+                    <h3>Cảm ơn bạn đã góp ý kiến</h3>
+                    <p>Chúng tôi xin ghi nhận ý kiến của bạn và sẽ cải tiến, nâng cao chất lượng phục vụ hơn nữa trong thời gian sắp tới.</p>
+                    <button class="submit-btn" onclick="location.reload()">Gửi ý kiến khác</button>
+                </div>
+
+                <div class="form-container" id="formWrapper">
+                    <form id="feedbackForm" onsubmit="return showThankYou(event)">
+                        <span class="section-title">1. Thông tin về người góp ý</span>
+                        <label for="txtTen">Họ và tên:</label>
+                        <input type="text" id="txtTen" name="txtTen" required placeholder="Nhập tên của bạn...">
+                        <br><br>
+                        
+                        <label for="txtEmail">Địa chỉ email:</label>
+                        <input type="email" id="txtEmail" name="txtEmail" required placeholder="example@email.com">
+
+                        <span class="section-title">2. Đóng góp ý kiến</span>
+                        <label>Ý kiến đóng góp:</label><br>
+                        <textarea id="txtComment" name="txtComment" rows="6" placeholder="Nhập ý kiến tại đây..."></textarea>
+
+                        <span class="section-title">Thể loại cần bổ sung thêm sách:</span>
+                        <div style="text-align: left; margin-left: 20px;">
+                            <input type="checkbox" name="chk" value="TruyenNgan"> Truyện ngắn <br>
+                            <input type="checkbox" name="chk" value="KiNang"> Kỹ năng sống <br>
+                            <input type="checkbox" name="chk" value="CNTT"> Công nghệ thông tin <br>
+                            <input type="checkbox" name="chk" value="TruyenTranh"> Truyện tranh <br>
+                            <input type="checkbox" name="chk" value="LichSu"> Lịch sử <br>
+                        </div>
+
+                        <input type="submit" class="submit-btn" value="Gửi Góp Ý">
+                    </form>
                 </div>
             </div>
 
         </main>
 
         <footer>
-            &copy; 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Bảo Trân 12A9 <br>
+            © 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Bảo Trân 12A9 <br>
             <small>Bài tập thực hành Tin học 12 - Chúc bạn đạt điểm tối đa!</small>
         </footer>
     </div>
 
     <script>
+        // Hàm chuyển đổi giữa các trang
         function showSection(sectionId) {
             var sections = document.getElementsByClassName('section');
             for (var i = 0; i < sections.length; i++) {
@@ -296,6 +369,17 @@
                     behavior: 'smooth'
                 });
             }
+        }
+
+        // Hàm xử lý khi nhấn Gửi form
+        function showThankYou(event) {
+            event.preventDefault(); 
+            
+            // Ẩn form và hiện thông báo cảm ơn
+            document.getElementById('formWrapper').style.display = 'none';
+            document.getElementById('feedbackResponse').style.display = 'block';
+            
+            return false;
         }
     </script>
 
