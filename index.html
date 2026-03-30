@@ -68,8 +68,8 @@
             display: block; 
             color: white; 
             text-decoration: none; 
-            padding: 15px 25px; 
-            font-size: 15px; 
+            padding: 15px 20px; 
+            font-size: 14px; 
             font-weight: 600; 
             cursor: pointer; 
             transition: 0.3s; 
@@ -151,7 +151,7 @@
             box-shadow: 0 6px 20px rgba(255,0,0,0.4);
         }
 
-        /* --- CSS CHO PHẦN FORM Ý KIẾN --- */
+        /* --- CSS CHO PHẦN FORM --- */
         .form-container { 
             border: 1px solid #ccc; 
             padding: 25px; 
@@ -160,30 +160,34 @@
             background-color: #fff;
             border-radius: 8px;
         }
-        .thank-you-message { 
-            display: none; 
-            border: 2px solid #4CAF50; 
-            padding: 20px; 
-            background-color: #f1f8e9; 
-            margin-bottom: 20px; 
-            text-align: center;
-            border-radius: 8px;
-        }
-        .section-title { font-weight: bold; margin-top: 20px; display: block; color: #004aad; border-bottom: 1px solid #eee; margin-bottom: 10px; }
-        textarea { margin-top: 5px; width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; }
-        input[type="text"], input[type="email"] { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        .section-title { font-weight: bold; margin-top: 15px; display: block; color: #004aad; border-bottom: 1px solid #eee; margin-bottom: 10px; }
+        input[type="text"], input[type="email"], textarea { width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; }
+        
         .submit-btn { 
             margin-top: 20px; 
-            padding: 12px 30px; 
+            padding: 10px 25px; 
             cursor: pointer; 
             background-color: #004aad; 
             color: white; 
             border: none; 
             border-radius: 4px; 
             font-weight: bold;
-            transition: 0.3s;
+            margin-right: 10px;
         }
-        .submit-btn:hover { background-color: #003366; }
+        .reset-btn {
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Layout cho Form Hội Thao (giống Hình 6) */
+        .hoithao-form label { display: block; margin-top: 10px; }
+        .hoithao-form input[type="text"], .hoithao-form input[type="email"] { width: 80%; display: inline-block; }
+        .hoithao-group { margin: 15px 0; }
 
         /* Footer */
         footer { 
@@ -199,9 +203,7 @@
         @media (max-width: 1000px) {
             .wrapper { width: 95%; }
             .profile-layout { flex-direction: column; align-items: center; text-align: center; }
-            .header-content { text-align: center; }
             header { flex-direction: column; }
-            .info h3 { border-left: none; border-bottom: 2px solid #004aad; display: inline-block; padding: 0 10px; }
         }
     </style>
 </head>
@@ -221,6 +223,7 @@
                 <li><a onclick="showSection('gioithieu')">Giới thiệu</a></li>
                 <li><a onclick="showSection('tkb')">Thời khóa biểu</a></li>
                 <li><a onclick="showSection('tinhoc')">Chương trình Tin 12</a></li>
+                <li><a onclick="showSection('hoithao')">Đăng ký Hội thao</a></li>
                 <li><a onclick="showSection('data')">Nghề tương lai</a></li>
                 <li><a onclick="showSection('feedback')">Đóng góp ý kiến</a></li>
             </ul>
@@ -237,13 +240,10 @@
                     <div class="info">
                         <p><strong>Nickname:</strong> Bao Tran (12A9)</p>
                         <p><strong>Tuổi:</strong> 17 - "Dù ở tuổi nào, đam mê vẫn là kim chỉ nam."</p>
-                        
                         <h3>Tính cách</h3>
                         <p>Nửa đùa giỡn, nửa "chiến binh" trong mọi thử thách. Luôn nỗ lực hết mình vì mục tiêu đã đề ra.</p>
-                        
                         <h3>Sở thích</h3>
                         <p>Chinh phục những đỉnh cao mới trong học tập và thể thao.</p>
-                        
                         <h3>Sở trường</h3>
                         <p>Chơi game chiến thuật, viết văn truyền cảm hứng và lắp ráp mô hình.</p>
                     </div>
@@ -281,9 +281,32 @@
                     <h3>Chương 2: Hệ quản trị CSDL Microsoft Access</h3>
                     <p>Thực hành tạo lập bảng, truy vấn dữ liệu và thiết kế form nhập liệu chuyên nghiệp.</p>
                 </div>
-                <div class="lesson-item">
-                    <h3>Chương 3: Cấu trúc và liên kết bảng</h3>
-                    <p>Xây dựng mối quan hệ giữa các bảng để tối ưu hóa việc quản lý dữ liệu.</p>
+            </div>
+
+            <div id="hoithao" class="section">
+                <div class="form-container hoithao-form">
+                    <h2 style="border: none; text-align: left; color: black; text-transform: none;">Đăng kí tham gia Hội thao</h2>
+                    <form>
+                        <label>Họ và tên: <input type="text" name="txtHoTen"></label>
+                        <label>Địa chỉ email: <input type="email" name="txtEmail"></label>
+                        
+                        <div class="hoithao-group">
+                            <input type="radio" name="lop" value="10"> Lớp 10 
+                            <input type="radio" name="lop" value="11"> Lớp 11 
+                            <input type="radio" name="lop" value="12"> Lớp 12
+                        </div>
+
+                        <p>Tham dự môn:</p>
+                        <div class="hoithao-group">
+                            <input type="checkbox" name="mon" value="bongban"> Bóng bàn <br>
+                            <input type="checkbox" name="mon" value="caulong"> Cầu lông <br>
+                            <input type="checkbox" name="mon" value="covua"> Cờ vua
+                        </div>
+
+                        <input type="submit" class="submit-btn" value="Đăng kí">
+                        <input type="reset" class="reset-btn" value="Huỷ bỏ">
+                    </form>
+                    <p style="text-align: center; font-style: italic; margin-top: 20px;">Hình 6. Biểu mẫu đăng kí tham gia hội thao</p>
                 </div>
             </div>
 
@@ -291,47 +314,23 @@
                 <h2>Nghề giáo viên văn</h2>
                 <div style="text-align: center; padding: 20px;">
                     <p style="color: #666; font-style: italic; font-size: 22px; margin-bottom: 20px;">"Gieo mầm con chữ - Nuôi dưỡng tâm hồn"</p>
-                    <p style="line-height: 1.8; max-width: 80%; margin: 0 auto; color: #444;">
-                        Lựa chọn trở thành Giáo viên Ngữ văn không chỉ là dạy kiến thức, mà còn là truyền ngọn lửa yêu thương và cái nhìn nhân văn về cuộc đời qua từng tác phẩm văn học. 
-                        Đó là hành trình đánh thức những xúc cảm tốt đẹp nhất trong lòng học sinh.
-                    </p>
-                    <a href="https://www.youtube.com/watch?v=_g_1znJ2uJw" target="_blank" class="video-btn">
-                        ▶ Xem Video Giới Thiệu Nghề
-                    </a>
+                    <a href="https://www.youtube.com/watch?v=_g_1znJ2uJw" target="_blank" class="video-btn">▶ Xem Video Giới Thiệu Nghề</a>
                 </div>
             </div>
 
             <div id="feedback" class="section">
                 <h2>ĐÓNG GÓP Ý KIẾN THƯ VIỆN</h2>
-                
-                <div id="feedbackResponse" class="thank-you-message">
-                    <h3>Cảm ơn bạn đã góp ý kiến</h3>
-                    <p>Chúng tôi xin ghi nhận ý kiến của bạn và sẽ cải tiến, nâng cao chất lượng phục vụ hơn nữa trong thời gian sắp tới.</p>
-                    <button class="submit-btn" onclick="location.reload()">Gửi ý kiến khác</button>
-                </div>
-
-                <div class="form-container" id="formWrapper">
-                    <form id="feedbackForm" onsubmit="return showThankYou(event)">
+                <div class="form-container">
+                    <form id="feedbackForm">
                         <span class="section-title">1. Thông tin về người góp ý</span>
-                        <label for="txtTen">Họ và tên:</label>
-                        <input type="text" id="txtTen" name="txtTen" required placeholder="Nhập tên của bạn...">
+                        <label>Họ và tên:</label>
+                        <input type="text" placeholder="Nhập tên của bạn...">
                         <br><br>
-                        
-                        <label for="txtEmail">Địa chỉ email:</label>
-                        <input type="email" id="txtEmail" name="txtEmail" required placeholder="example@email.com">
+                        <label>Địa chỉ email:</label>
+                        <input type="email" placeholder="example@email.com">
 
                         <span class="section-title">2. Đóng góp ý kiến</span>
-                        <label>Ý kiến đóng góp:</label><br>
-                        <textarea id="txtComment" name="txtComment" rows="6" placeholder="Nhập ý kiến tại đây..."></textarea>
-
-                        <span class="section-title">Thể loại cần bổ sung thêm sách:</span>
-                        <div style="text-align: left; margin-left: 20px;">
-                            <input type="checkbox" name="chk" value="TruyenNgan"> Truyện ngắn <br>
-                            <input type="checkbox" name="chk" value="KiNang"> Kỹ năng sống <br>
-                            <input type="checkbox" name="chk" value="CNTT"> Công nghệ thông tin <br>
-                            <input type="checkbox" name="chk" value="TruyenTranh"> Truyện tranh <br>
-                            <input type="checkbox" name="chk" value="LichSu"> Lịch sử <br>
-                        </div>
+                        <textarea rows="4" placeholder="Nhập ý kiến tại đây..."></textarea>
 
                         <input type="submit" class="submit-btn" value="Gửi Góp Ý">
                     </form>
@@ -347,39 +346,13 @@
     </div>
 
     <script>
-        // Hàm chuyển đổi giữa các trang
         function showSection(sectionId) {
             var sections = document.getElementsByClassName('section');
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active');
             }
             document.getElementById(sectionId).classList.add('active');
-            
-            // Cuộn mượt mà đến vùng nội dung
-            const offset = 120;
-            const element = document.getElementById(sectionId);
-            if(element) {
-                const bodyRect = document.body.getBoundingClientRect().top;
-                const elementRect = element.getBoundingClientRect().top;
-                const elementPosition = elementRect - bodyRect;
-                const offsetPosition = elementPosition - offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        // Hàm xử lý khi nhấn Gửi form
-        function showThankYou(event) {
-            event.preventDefault(); 
-            
-            // Ẩn form và hiện thông báo cảm ơn
-            document.getElementById('formWrapper').style.display = 'none';
-            document.getElementById('feedbackResponse').style.display = 'block';
-            
-            return false;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 
