@@ -24,7 +24,7 @@
             overflow: hidden; 
         }
         
-        /* Header với Logo mới */
+        /* Header với Logo */
         header { 
             background: linear-gradient(135deg, #004aad 0%, #00a3ff 100%); 
             color: white; 
@@ -151,7 +151,7 @@
             box-shadow: 0 6px 20px rgba(255,0,0,0.4);
         }
 
-        /* --- CSS CHO PHẦN FORM --- */
+        /* Form Styling */
         .form-container { 
             border: 1px solid #ccc; 
             padding: 25px; 
@@ -184,7 +184,6 @@
             font-weight: bold;
         }
 
-        /* Layout cho Form Hội Thao (giống Hình 6) */
         .hoithao-form label { display: block; margin-top: 10px; }
         .hoithao-form input[type="text"], .hoithao-form input[type="email"] { width: 80%; display: inline-block; }
         .hoithao-group { margin: 15px 0; }
@@ -199,7 +198,6 @@
             border-top: 1px solid #1a2a44; 
         }
 
-        /* Responsive */
         @media (max-width: 1000px) {
             .wrapper { width: 95%; }
             .profile-layout { flex-direction: column; align-items: center; text-align: center; }
@@ -289,18 +287,20 @@
                     <form>
                         <label>Họ và tên: <input type="text" name="txtHoTen"></label>
                         <label>Địa chỉ email: <input type="email" name="txtEmail"></label>
+                        <br>
                         
                         <div class="hoithao-group">
+                            <p><strong>Khối lớp:</strong></p>
                             <input type="radio" name="lop" value="10"> Lớp 10 
                             <input type="radio" name="lop" value="11"> Lớp 11 
                             <input type="radio" name="lop" value="12"> Lớp 12
                         </div>
 
-                        <p>Tham dự môn:</p>
                         <div class="hoithao-group">
-                            <input type="checkbox" name="mon" value="bongban"> Bóng bàn <br>
-                            <input type="checkbox" name="mon" value="caulong"> Cầu lông <br>
-                            <input type="checkbox" name="mon" value="covua"> Cờ vua
+                            <p><strong>Tham dự môn (Chọn 1 môn):</strong></p>
+                            <input type="radio" name="mon" value="bongban"> Bóng bàn <br><br>
+                            <input type="radio" name="mon" value="caulong"> Cầu lông <br><br>
+                            <input type="radio" name="mon" value="covua"> Cờ vua
                         </div>
 
                         <input type="submit" class="submit-btn" value="Đăng kí">
@@ -327,10 +327,10 @@
                         <input type="text" placeholder="Nhập tên của bạn...">
                         <br><br>
                         <label>Địa chỉ email:</label>
-                        <input type="email" placeholder="example@email.com">
+                        <input type="email" placeholder="example@email.com"><br>
 
                         <span class="section-title">2. Đóng góp ý kiến</span>
-                        <textarea rows="4" placeholder="Nhập ý kiến tại đây..."></textarea>
+                        <textarea rows="4" placeholder="Nhập ý kiến tại đây..."></textarea><br><br>
 
                         <input type="submit" class="submit-btn" value="Gửi Góp Ý">
                     </form>
@@ -340,7 +340,7 @@
         </main>
 
         <footer>
-            © 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Bảo Trân 12A9 <br>
+            © 2026 TRƯỜNG THPT NGÔ QUYỀN TPHCM - Thiết kế bởi Bảo Trân 12A9 <br><br>
             <small>Bài tập thực hành Tin học 12 - Chúc bạn đạt điểm tối đa!</small>
         </footer>
     </div>
