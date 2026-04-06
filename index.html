@@ -132,7 +132,7 @@
         }
         .lesson-item h3 { color: #28a745; margin-bottom: 8px; }
 
-        /* Nút xem video */
+        /* Video Button */
         .video-btn {
             display: inline-block;
             margin-top: 25px;
@@ -148,7 +148,6 @@
         .video-btn:hover {
             background-color: #cc0000;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255,0,0,0.4);
         }
 
         /* Form Styling */
@@ -184,9 +183,16 @@
             font-weight: bold;
         }
 
-        .hoithao-form label { display: block; margin-top: 10px; }
-        .hoithao-form input[type="text"], .hoithao-form input[type="email"] { width: 80%; display: inline-block; }
-        .hoithao-group { margin: 15px 0; }
+        /* Thank You Message Style */
+        #thankYouMessage {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            border: 2px dashed #28a745;
+            animation: fadeIn 0.5s ease;
+        }
 
         /* Footer */
         footer { 
@@ -282,12 +288,12 @@
             </div>
 
             <div id="hoithao" class="section">
-                <div class="form-container hoithao-form">
+                <div class="form-container">
                     <h2 style="border: none; text-align: left; color: black; text-transform: none;">Đăng kí tham gia Hội thao</h2>
                     <form>
                         <label>Họ và tên: <input type="text" name="txtHoTen"></label>
                         <label>Địa chỉ email: <input type="email" name="txtEmail"></label>
-                        <br>
+                        <br><br>
                         
                         <div class="hoithao-group">
                             <p><strong>Khối lớp:</strong></p>
@@ -296,17 +302,16 @@
                             <input type="radio" name="lop" value="12"> Lớp 12
                         </div>
 
-                        <div class="hoithao-group">
+                        <div class="hoithao-group" style="margin-top: 15px;">
                             <p><strong>Tham dự môn (Chọn 1 môn):</strong></p>
-                            <input type="radio" name="mon" value="bongban"> Bóng bàn <br><br>
-                            <input type="radio" name="mon" value="caulong"> Cầu lông <br><br>
+                            <input type="radio" name="mon" value="bongban"> Bóng bàn <br>
+                            <input type="radio" name="mon" value="caulong"> Cầu lông <br>
                             <input type="radio" name="mon" value="covua"> Cờ vua
                         </div>
 
                         <input type="submit" class="submit-btn" value="Đăng kí">
                         <input type="reset" class="reset-btn" value="Huỷ bỏ">
                     </form>
-                    <p style="text-align: center; font-style: italic; margin-top: 20px;">Biểu mẫu đăng kí tham gia hội thao</p>
                 </div>
             </div>
 
@@ -324,7 +329,7 @@
                     <form id="feedbackForm">
                         <span class="section-title">1. Thông tin về người góp ý</span>
                         <label>Họ và tên:</label>
-                        <input type="text" placeholder="Nhập tên của bạn...">
+                        <input type="text" id="userName" placeholder="Nhập tên của bạn..." required>
                         <br><br>
                         <label>Địa chỉ email:</label>
                         <input type="email" placeholder="example@email.com"><br>
@@ -334,6 +339,14 @@
 
                         <input type="submit" class="submit-btn" value="Gửi Góp Ý">
                     </form>
+
+                    <div id="thankYouMessage">
+                        <h3 style="color: #28a745; margin-bottom: 10px;">
+                            Cảm ơn bạn <span id="displayUserName" style="color: #d32f2f;"></span> đã đóng góp ý kiến cho thư viện!
+                        </h3>
+                        <p>Ý kiến của bạn đã được ghi nhận và sẽ giúp thư viện ngày càng tốt hơn.</p>
+                        <button onclick="resetFeedback()" class="reset-btn" style="margin-top: 20px;">Gửi thêm ý kiến khác</button>
+                    </div>
                 </div>
             </div>
 
@@ -346,6 +359,7 @@
     </div>
 
     <script>
+        // Hàm chuyển đổi giữa các tab
         function showSection(sectionId) {
             var sections = document.getElementsByClassName('section');
             for (var i = 0; i < sections.length; i++) {
@@ -353,6 +367,28 @@
             }
             document.getElementById(sectionId).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Xử lý sự kiện gửi Feedback
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn trình duyệt load lại trang
+
+            // Lấy giá trị tên từ ô nhập liệu
+            var name = document.getElementById('userName').value;
+
+            // Ẩn form và hiện lời cảm ơn
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+
+            // Gán tên vào thông báo cảm ơn
+            document.getElementById('displayUserName').innerText = name;
+        });
+
+        // Hàm để quay lại form nhập liệu
+        function resetFeedback() {
+            document.getElementById('feedbackForm').reset();
+            document.getElementById('feedbackForm').style.display = 'block';
+            document.getElementById('thankYouMessage').style.display = 'none';
         }
     </script>
 
